@@ -30,4 +30,12 @@ export const blogAPI = {
   deletePost: (id) => api.delete(`/posts/${id}`),
 };
 
+// Comments API
+export const commentsAPI = {
+  getComments: (postId) => api.get(`/posts/${postId}/comments`),
+  addComment: (postId, commentData) => api.post(`/posts/${postId}/comments`, commentData),
+  updateComment: (postId, commentId, commentData) => api.put(`/posts/${postId}/comments/${commentId}`, commentData),
+  deleteComment: (postId, commentId) => api.delete(`/posts/${postId}/comments/${commentId}`),
+};
+
 export default api;

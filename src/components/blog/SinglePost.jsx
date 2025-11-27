@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogAPI } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
+import CommentsSection from '../comments/CommentsSection';
 
 const SinglePost = () => {
   const { id } = useParams();
@@ -172,14 +173,8 @@ const SinglePost = () => {
           )}
         </div>
       </article>
-
-      {/* Comments section - you can expand this later */}
-      <div className="mt-12">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-6">Comments</h3>
-        <div className="bg-gray-50 rounded-lg p-6 text-center">
-          <p className="text-gray-600">Comments feature coming soon!</p>
-        </div>
-      </div>
+        {/* Comments Section */}
+      <CommentsSection postId={id} />
     </div>
   );
 };
