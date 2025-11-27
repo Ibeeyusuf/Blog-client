@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import CommentItem from './CommentItem';
 
 const CommentList = ({ comments, currentUser, onUpdateComment, onDeleteComment }) => {
@@ -6,7 +5,7 @@ const CommentList = ({ comments, currentUser, onUpdateComment, onDeleteComment }
     <div className="space-y-6">
       {comments.map((comment) => (
         <CommentItem
-          key={comment.id}
+          key={comment.id || comment._id}
           comment={comment}
           currentUser={currentUser}
           onUpdateComment={onUpdateComment}

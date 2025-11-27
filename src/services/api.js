@@ -38,4 +38,5 @@ export const commentsAPI = {
   deleteComment: (postId, commentId) => api.delete(`/posts/${postId}/comments/${commentId}`),
 };
 
+
 export default api;
